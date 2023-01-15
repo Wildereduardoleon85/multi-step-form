@@ -1,0 +1,311 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap');
+
+:root {
+    /* palette */
+    --cake-blue: #eef5ff;
+    --secondary: #9fa0a5;
+    --primary: #082e5c;
+    --aquamarine: #bee3ff;
+    --light-grey: #dcdcdf;
+    --coral-red: #da5d71;
+    --grey: #c6c7cf;
+    --purple: #483eff;
+  }
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--cake-blue);
+    font-family: 'Ubuntu', sans-serif;
+    color: white;
+}
+
+main {
+    display: flex;
+    align-items: center;
+    height: 100vh;
+}
+
+.btn {
+    padding: 16px 28px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    color: var(--secondary);
+    background-color: transparent;
+    font-weight:700;
+}
+
+.filled-button {
+    background-color: var(--primary);
+    color:white;
+    font-weight: 400;
+}
+
+.btn:hover {
+    color: #082e5c;
+    transition: color ease-in-out 0.2s;
+}
+
+.filled-button:hover {
+    opacity: 0.85;
+    color: white;
+    transition: opacity ease-in-out 0.2s;
+}
+
+.filled-button:active {
+    opacity: 0.3;
+}
+
+.plan-container {
+    background-color: white; 
+    width: 900px;
+    margin: auto;
+    padding: 16px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: row;
+}
+
+img {
+    vertical-align: bottom;
+}
+
+.side-bar {
+    background-image: url("./images/bg-sidebar-desktop.svg");
+    background-repeat: no-repeat;
+    height: 568px;
+    width: 274px;
+    display: flex;
+}
+
+.steps {
+    height: 400px;
+    margin-left: 32px;
+}
+
+.step {
+    display: flex;
+    flex-direction: row;
+    margin-top: 30px;
+    align-items: center;
+}
+
+.step-text {
+    margin-left: 16px;
+}
+
+.step-text > p:first-child {
+    font-size: 0.8rem;
+    color:rgba(255, 255, 255, 0.5);
+}
+
+.step-text > p:nth-child(2) {
+    font-weight: 500;
+}
+
+.circle {
+    display: flex;
+    align-items: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 1px solid white;
+    position: relative;
+}
+
+.circle > p {
+    margin: auto;
+    position: relative;
+    pointer-events: none;
+}
+
+.activeCircle {
+    background-color: var(--aquamarine);
+    color: var(--primary);
+    font-weight: 500;
+    border-color: transparent;
+}
+
+.main-content {
+    position: relative;
+    width: 443px;
+    margin: 28px auto 28px auto;
+    color: var(--primary);
+}
+
+.main-content .header > h2 {
+    font-size: 2rem;
+}
+
+.main-content .header > p:nth-child(2) {
+    margin-top: 10px;
+    color: var(--secondary);
+}
+
+/* Step # 1 */
+.main-content label {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--primary);
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+.main-content input {
+    width: 100%;
+    border: 1px solid var(--light-grey);
+    border-radius: 8px;
+    padding: 12px;
+    outline: none;
+    font-size: 1rem;
+    font-family: 'Ubuntu', sans-serif;
+    color: var(--primary);
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.main-content input:focus {
+    border-color: var(--primary);
+}
+
+.main-content form {
+    height: calc(100% - 70px);
+    margin-top: 40px;
+}
+
+.main-content form .label-group {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.main-content form .label-group span {
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    margin-left: auto;
+    color: var(--coral-red);
+}
+
+.main-content .btn.filled-button.next-step {
+    position:  absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.main-content .btn.go-back {
+    position:  absolute;
+    bottom: 0;
+    left: 0;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+::placeholder{
+    color: var(--grey);
+}
+
+/* Step #2 */
+.step-2-content .plans{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 40px;
+}
+
+.step-2-content .plans .plan-type {
+    border: 1px solid var(--light-grey);
+    border-radius: 8px;
+    height: 160px;
+    width: 135px;
+    cursor: pointer;
+    padding: 20px 16px 16px 16px;
+    position: relative;
+}
+
+.step-2-content .plans .plan-type.activePlan {
+    background-color: var(--cake-blue);
+    border-color: var(--purple);
+}
+
+.step-2-content .plans .plan-type:hover{
+    border: 1px solid var(--purple);
+    transition: border ease-in-out 0.2s;
+}
+
+.step-2-content .plans .plan-type div {
+    position: absolute;
+    bottom: 16px;
+    left: 16px;
+}
+
+.step-2-content .plans .plan-type > div > p:first-child{
+    color: var(--primary);
+    font-weight: 700;
+}
+
+.step-2-content .plans .plan-type > div > p:nth-child(2){
+    color: var(--secondary);
+    font-size: 0.9rem;
+    margin-top: 6px;
+}
+
+.step-2-content .selector {
+    display: flex;
+    flex-direction: row;
+    background-color: var(--cake-blue);
+    margin-top: 28px;
+    border-radius: 8px;
+    justify-content: center;
+    align-items: center;
+}
+
+.step-2-content .selector p, .step-2-content .selector div {
+    margin: 8px;
+    transition: color ease-in-out 0.3s;
+}
+
+.step-2-content .selector p:last-child{
+    color: var(--secondary);
+}
+
+.step-2-content .selector p {
+    font-weight: 500;
+}
+
+/* switch button */
+.step-2-content .selector > div .label-switch {
+    display: flex;
+    width: 36px;
+    height: 20px;
+    background-color: var(--primary);
+    border-radius: 100px;
+    cursor: pointer;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.step-2-content .selector > div .label-switch:after{
+    content: '';
+    width: 12px;
+    height: 12px;
+    background-color: white;
+    border-radius: 50%;
+    transition: 0.2s;
+    margin-left: 4px;
+    margin-right: 4px;
+}
+
+.step-2-content .selector  input {
+    display: none;
+}
+
+#btn-switch:checked~ .label-switch:after{
+    transform: translateX(130%);
+}
