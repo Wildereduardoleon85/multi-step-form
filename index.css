@@ -222,11 +222,15 @@ img {
 .step-2-content .plans .plan-type {
     border: 1px solid var(--light-grey);
     border-radius: 8px;
-    height: 160px;
+    height: 184px;
     width: 135px;
     cursor: pointer;
     padding: 20px 16px 16px 16px;
     position: relative;
+}
+
+.step-2-content .plans .plan-type img {
+    pointer-events: none;
 }
 
 .step-2-content .plans .plan-type.activePlan {
@@ -239,10 +243,11 @@ img {
     transition: border ease-in-out 0.2s;
 }
 
-.step-2-content .plans .plan-type div {
+.step-2-content .plans .plan-type > div {
     position: absolute;
     bottom: 16px;
     left: 16px;
+    pointer-events: none;
 }
 
 .step-2-content .plans .plan-type > div > p:first-child{
@@ -254,6 +259,12 @@ img {
     color: var(--secondary);
     font-size: 0.9rem;
     margin-top: 6px;
+}
+
+.step-2-content .plans .plan-type > div > .anual-offer{
+    margin-top: 8px;
+    font-size: 0.9rem;
+    display: none;
 }
 
 .step-2-content .selector {

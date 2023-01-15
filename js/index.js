@@ -11,14 +11,18 @@ const stepContent = document.querySelector('.step-content')
 const headerH2 = document.querySelector('.header h2')
 const headerP = document.querySelector('.header p')
 
+function clearActiveCircleClass() {
+  circleSteps.forEach((circle) => {
+    circle.classList.remove('activeCircle')
+  })
+}
+
 function setStep1Context() {
   headerH2.textContent = 'Personal info'
   headerP.textContent =
     'Please provide your name, email address, and phone number.'
   stepContent.innerHTML = step1Content
-  circleSteps.forEach((circle) => {
-    circle.classList.remove('activeCircle')
-  })
+  clearActiveCircleClass()
   circleSteps[0].classList.add('activeCircle')
 
   const nameInput = document.querySelector('form #name')
@@ -53,9 +57,7 @@ function setStep1Context() {
 setStep1Context()
 
 function setStep2Context() {
-  circleSteps.forEach((circle) => {
-    circle.classList.remove('activeCircle')
-  })
+  clearActiveCircleClass()
   headerH2.textContent = 'Select your plan'
   headerP.textContent = 'You have the option of monthly or yearly billing'
   circleSteps[1].classList.add('activeCircle')
@@ -68,14 +70,38 @@ function setStep2Context() {
   const selector = document.querySelector('.selector')
   const monthlyLabel = selector.firstElementChild
   const yearlyLabel = selector.lastElementChild
+  const anualOfferLabels = document.querySelectorAll('.anual-offer')
+  const arcadePrize = document.querySelector('#arcade-prize')
+  const advancePrize = document.querySelector('#advance-prize')
+  const proPrize = document.querySelector('#pro-prize')
+
+  function setYearlyContext() {
+    arcadePrize.textContent = '$90/yr'
+    advancePrize.textContent = '$120/yr'
+    proPrize.textContent = '$150/yr'
+    monthlyLabel.style.color = '#9fa0a5'
+    yearlyLabel.style.color = '#082e5c'
+    anualOfferLabels.forEach((label) => {
+      label.style.display = 'block'
+    })
+  }
+
+  function setMonthlyContext() {
+    arcadePrize.textContent = '$9/mo'
+    advancePrize.textContent = '$12/mo'
+    proPrize.textContent = '$15/mo'
+    monthlyLabel.style.color = '#082e5c'
+    yearlyLabel.style.color = '#9fa0a5'
+    anualOfferLabels.forEach((label) => {
+      label.style.display = 'none'
+    })
+  }
 
   switchButton.addEventListener('change', (e) => {
     if (e.target.checked) {
-      monthlyLabel.style.color = '#9fa0a5'
-      yearlyLabel.style.color = '#082e5c'
+      setYearlyContext()
     } else {
-      monthlyLabel.style.color = '#082e5c'
-      yearlyLabel.style.color = '#9fa0a5'
+      setMonthlyContext()
     }
   })
 
@@ -97,6 +123,11 @@ function setStep2Context() {
   })
 }
 
+function setStep3Context() {
+  clearActiveCircleClass()
+  circleSteps[2].classList.add('activeCircle')
+}
+
 function updateActiveStep(step) {
   switch (step) {
     case 1:
@@ -106,7 +137,7 @@ function updateActiveStep(step) {
       setStep2Context()
       break
     case 3:
-      circleSteps[2].classList.add('activeCircle')
+      setStep3Context()
       break
     case 4:
       // circleSteps[3].classList.add('activeCircle')
@@ -116,4 +147,4 @@ function updateActiveStep(step) {
   }
 }
 
-// updateActiveStep(2)
+updateActiveStep(2)

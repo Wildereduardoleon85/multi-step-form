@@ -5,21 +5,24 @@ export const step2Content = `
             <img src="/images/icon-arcade.svg" alt="arcade-icon" />
             <div>
             <p>Arcade</p>
-            <p>$9/mo</p>
+            <p id="arcade-prize">$9/mo</p>
+            <p class="anual-offer">2 months free</p>
             </div>
         </div>
         <div class="plan-type">
             <img src="/images/icon-advanced.svg" alt="advance-icon" />
             <div>
             <p>Advance</p>
-            <p>$9/mo</p>
+            <p id="advance-prize">$12/mo</p>
+            <p class="anual-offer">2 months free</p>
             </div>
         </div>
         <div class="plan-type">
             <img src="/images/icon-pro.svg" alt="pro-icon" />
             <div>
             <p>Pro</p>
-            <p>$9/mo</p>
+            <p id="pro-prize">$15/mo</p>
+            <p class="anual-offer">2 months free</p>
             </div>
         </div>
         </div>
