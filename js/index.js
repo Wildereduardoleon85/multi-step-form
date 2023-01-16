@@ -146,5 +146,3 @@ function updateActiveStep(step) {
       break
   }
 }
-
-updateActiveStep(2)
